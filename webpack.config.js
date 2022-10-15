@@ -1,21 +1,19 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+//继承base的内容
+const base = require('./webpack.config.base.js')
 
 module.exports = {
-  mode: 'development', // development or production
-  entry: './src/index.js',
-  output: {
-    filename: '[name].[contenthash].js',  //filename: 'index.[contenthash].js', 
+  //将base所有属性抄过来了
+  ...base,
+  mode: 'development', 
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
   },
-  plugins: [new HtmlWebpackPlugin({
-    title: '小常',
-    template: 'src/assets/index.html'  //按照我给你的模板生成html文件
-  })],
   module: {
     rules: [
       {
         test: /\.css$/i,  //以.css结尾的用css-loader加载
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader"],  //在html页面里面生成style标签放入css代码,生产环境中用主要因为它快，不需要生成文件
       },
     ],
   },
