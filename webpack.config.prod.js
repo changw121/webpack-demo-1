@@ -14,6 +14,7 @@ module.exports = {
 ],
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/i,  //以.css结尾的用css-loader加载
         //将css抽成文件在html中link，生产环境中用这个，可以做缓存

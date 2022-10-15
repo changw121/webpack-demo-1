@@ -11,6 +11,7 @@ module.exports = {
   },
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/i,  //以.css结尾的用css-loader加载
         use: ["style-loader", "css-loader"],  //在html页面里面生成style标签放入css代码,生产环境中用主要因为它快，不需要生成文件
