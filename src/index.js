@@ -5,10 +5,10 @@ console.log(png)
 
 //给模板中添加img标签
 const div = document.getElementById('app')
-console.log(div)
-div.innerHTML = `
-    <img src="${png}">
-`
+// console.log(div)
+// div.innerHTML = `
+//     <img src="${png}">
+// `
 
 const button = document.createElement('button')
 button.innerText = '懒加载'
