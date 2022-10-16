@@ -14,6 +14,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|svg|jpe|gif)$/,
+        use: [
+          "file-loader"  //把文件变成文件路径
+        ],
+      },
+      {
         test: /\.styl$/i,
         use: [
           "style-loader",
